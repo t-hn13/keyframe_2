@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Đặt bảng mã UTF-8 để hỗ trợ tiếng Việt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Responsive: phù hợp mọi thiết bị -->
+    <title>Bouncing Dots Loader</title>
+    <style>
+      body {
+        display: flex; /* Dùng Flexbox để căn giữa nội dung */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        height: 100vh; /* Chiều cao toàn màn hình */
+        background: #0d1b2a; /* Màu nền xanh đậm */
+      }
+
+      .loader {
+        display: flex; /* Xếp các chấm theo hàng ngang */
+        gap: 10px; /* Khoảng cách giữa các chấm */
+      }
+
+      .dot {
+        width: 15px; /* Chiều rộng mỗi chấm */
+        height: 15px; /* Chiều cao mỗi chấm */
+        background: #a5b4fc; /* Màu tím nhạt */
+        border-radius: 50%; /* Bo tròn thành hình tròn */
+        animation: bounce 0.6s infinite alternate;
+        /* bounce: tên animation
+           0.6s: thời gian 1 chu kỳ
+           infinite: lặp vô hạn
+           alternate: chạy xuôi rồi ngược lại */
+      }
+
+      /* Tạo độ trễ khác nhau cho từng chấm */
+      .dot:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .dot:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .dot:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .dot:nth-child(4) {
+        animation-delay: 0.45s;
+      }
+      .dot:nth-child(5) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0); /* Vị trí ban đầu */
+          opacity: 0.3; /* Hơi mờ */
+        }
+        to {
+          transform: translateY(-15px); /* Nhảy lên */
+          opacity: 1; /* Rõ hơn */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+      <div class="dot"></div>
+      <!-- Chấm 1 -->
+      <div class="dot"></div>
+      <!-- Chấm 2 -->
+      <div class="dot"></div>
+      <!-- Chấm 3 -->
+      <div class="dot"></div>
+      <!-- Chấm 4 -->
+      <div class="dot"></div>
+      <!-- Chấm 5 -->
+    </div>
+  </body>
+</html>
